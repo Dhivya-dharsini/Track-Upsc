@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
+    <body>
+        <div class="inputs">
+            <input type="text" placeholder="Enter Keywords" id="search" />
+            <br />
+            <br />
+            <div class="align-content-center">
+                <button type="button" class="search" id="searchButton"  style="outline:none" onclick="searchQuestions()">Search</button>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+<script type="text/javascript">
+    function searchQuestions()
+    {
+        alert(document.getElementById("search").value);
+        $.ajax({
+            type:"POST",
+            url: "/Home/SearchQuestions",
+            data: { searchKeyword: document.getElementById("search").value },
+            success: function(data)
+            {
+
+            },
+        });
+        alert("Hii");
+    }
+</script>
