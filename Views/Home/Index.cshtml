@@ -22,13 +22,12 @@
         alert(document.getElementById("search").value);
         $.ajax({
             type:"POST",
-            url: "/Home/SearchQuestions",
+            url: "/Search/SearchQuestions",
             data: { searchKeyword: document.getElementById("search").value },
             success: function(data)
             {
 
             },
         });
-        alert("Hii");
     }
 </script>

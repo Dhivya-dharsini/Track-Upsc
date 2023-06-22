@@ -1,13 +1,17 @@
+using TrackUPSC.Controllers;
+
 namespace TrackUPSC
 {
 	public class Program
 	{
 		public static void Main(string[] args)
 		{
-			var builder = WebApplication.CreateBuilder(args);
 
-			// Add services to the container.
-			builder.Services.AddControllersWithViews();
+
+            var builder = WebApplication.CreateBuilder(args);
+
+            // Add services to the container.
+            builder.Services.AddControllersWithViews();
 			builder.Services.AddDistributedMemoryCache();
 			builder.Services.AddHttpContextAccessor();
             builder.Services.AddRazorPages();
@@ -45,6 +49,8 @@ namespace TrackUPSC
 				pattern: "{controller=Home}/{action=Index}/{id?}");
 
 			app.Run();
-		}
-	}
+
+
+        }
+    }
 }

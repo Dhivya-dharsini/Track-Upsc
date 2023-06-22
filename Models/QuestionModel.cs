@@ -31,6 +31,11 @@ namespace TrackUPSC.Models
                 {
                     questions[currentQuestionIndex].answers.Add(line.Substring(3).Trim());
                 }
+                else if (line.StartsWith("ans"))
+                {
+                    questions[currentQuestionIndex].answer= line.Substring(line.IndexOf(':') + 1).Trim();
+
+                }
             }
         }
     }
